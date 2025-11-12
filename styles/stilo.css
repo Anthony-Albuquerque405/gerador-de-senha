@@ -70,6 +70,18 @@ h1 {
   background: #00a97a;
 }
 
+.strength {
+  margin-bottom: 1rem;
+}
+
+#strengthBar {
+  height: 10px;
+  border-radius: 5px;
+  background: #ccc;
+  margin-top: 0.3rem;
+  transition: background 0.3s;
+}
+
 .options label {
   display: flex;
   align-items: center;

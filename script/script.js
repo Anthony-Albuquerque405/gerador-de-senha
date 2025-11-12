@@ -1,5 +1,32 @@
 let history = [];
 
+function evaluateStrength(password) {
+  let score = 0;
+  if (password.length >= 8) score++;
+  if (/[A-Z]/.test(password)) score++;
+  if (/[a-z]/.test(password)) score++;
+  if (/[0-9]/.test(password)) score++;
+  if (/[^A-Za-z0-9]/.test(password)) score++;
+
+  const bar = document.getElementById("strengthBar");
+  switch (score) {
+    case 0:
+    case 1:
+      bar.style.background = "red";
+      break;
+    case 2:
+    case 3:
+      bar.style.background = "orange";
+      break;
+    case 4:
+      bar.style.background = "yellow";
+      break;
+    case 5:
+      bar.style.background = "green";
+      break;
+  }
+}
+
 function generatePassword() {
   const length = document.getElementById("length").value;
   const useUpper = document.getElementById("uppercase").checked;
@@ -19,6 +46,7 @@ function generatePassword() {
   }
 
   document.getElementById("password").value = password;
+  evaluateStrength(password);
 
   // Atualiza histórico
   history.unshift(password);
