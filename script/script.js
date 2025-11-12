@@ -79,10 +79,23 @@ function copyPassword() {
 
 const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+// Aplica o tema salvo ao carregar
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i> Tema Escuro';
+  }
+});
 
-  const isDark = document.body.classList.contains("dark-mode");
+// Alterna tema e salva no localStorage
+themeToggle.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
   themeToggle.innerHTML = isDark
     ? '<i class="fas fa-sun"></i> Tema Claro'
     : '<i class="fas fa-moon"></i> Tema Escuro';
