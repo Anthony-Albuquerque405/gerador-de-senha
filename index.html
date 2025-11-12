@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="styles/stilo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fas fa-key"></i> Gerador de Senhas</h1>
+
+      <div class="output">
+        <input type="text" id="password" readonly />
+        <button onclick="copyPassword()"><i class="fas fa-copy"></i></button>
+      </div>
+
+      <div class="options">
+        <label
+          ><input type="checkbox" id="uppercase" checked />
+          <i class="fas fa-font"></i> Maiúsculas</label
+        >
+        <label
+          ><input type="checkbox" id="lowercase" checked />
+          <i class="fas fa-font"></i> Minúsculas</label
+        >
+        <label
+          ><input type="checkbox" id="numbers" checked />
+          <i class="fas fa-hashtag"></i> Números</label
+        >
+        <label
+          ><input type="checkbox" id="symbols" />
+          <i class="fas fa-asterisk"></i> Símbolos</label
+        >
+        <label
+          ><i class="fas fa-ruler-horizontal"></i> Tamanho:
+          <input type="number" id="length" min="4" max="32" value="12" />
+        </label>
+      </div>
+
+      <button class="generate" onclick="generatePassword()">
+        <i class="fas fa-magic"></i> Gerar Senha
+      </button>
+
+      <div class="history">
+        <h3>Histórico</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
