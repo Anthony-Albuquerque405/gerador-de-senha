@@ -1,10 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --container-bg: #fff;
+  --button-bg: #007bff;
+  --button-text: #fff;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #fff;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,13 +23,36 @@ body {
 }
 
 .container {
-  background: #ffffff10;
+  background: var(--container-bg);
+  transition: background 0.3s;
+
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 2rem;
   width: 320px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 1s ease-in-out;
+}
+
+.theme-toggle {
+  background: var(--button-bg);
+  color: var(--button-text);
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+
+  margin: 10px 0;
+  padding: 0.5rem 0.75rem;
+}
+
+.dark-mode {
+  --bg-color: #1e1e2f;
+  --text-color: #f0f0f0;
+  --container-bg: #2c2c3c;
+  --button-bg: #00c896;
+  --button-text: #fff;
 }
 
 @keyframes fadeIn {
@@ -49,7 +82,6 @@ h1 {
 .output input {
   flex: 1;
   padding: 0.5rem;
-  border: none;
   border-radius: 6px;
   font-size: 1rem;
   background: #fff;

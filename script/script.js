@@ -76,3 +76,14 @@ function copyPassword() {
   passwordField.select();
   document.execCommand("copy");
 }
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  const isDark = document.body.classList.contains("dark-mode");
+  themeToggle.innerHTML = isDark
+    ? '<i class="fas fa-sun"></i> Tema Claro'
+    : '<i class="fas fa-moon"></i> Tema Escuro';
+});
