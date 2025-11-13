@@ -25,6 +25,7 @@ Este projeto está sob a licença [MIT](LICENSE). Veja o arquivo LICENSE para ma
 📍 Belo Jardim – PE, Brasil  
 🔗 GitHub: [@Anthony-Albuquerque405](https://github.com/Anthony-Albuquerque405)  
 📧 E-mail: anthonyhitnailbr@gmail.com
+🔗 Link Gerador de Senhas: https://anthony-albuquerque405.github.io/gerador-de-senha/
 
 ## 🤝 Contato e Contribuições
 
